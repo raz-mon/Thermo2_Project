@@ -30,10 +30,10 @@ def sir(u,parms,t):
     dfrac = 1.0 - math.exp(-mu*dt)
     infection = np.random.binomial(S,ifrac)
     recovery = np.random.binomial(I,rfrac)
-    death_S = np.random.binomial(S, dfrac)
-    death_I = np.random.binomial(I, dfrac)
-    death_R = np.random.binomial(R, dfrac)
-    return [S-infection-death_S,I+infection-recovery-death_I,R+recovery-death_R,Y+infection]
+    #death_S = np.random.binomial(S, dfrac)
+    #death_I = np.random.binomial(I, dfrac)
+    #death_R = np.random.binomial(R, dfrac)
+    return [S-infection,I+infection-recovery,R+recovery,Y+infection]
 
 # Here we change the value of beta from 0.1 to 0.1+0.01 * 50 = 0.51, mu = 0.00002
 def simulate():
